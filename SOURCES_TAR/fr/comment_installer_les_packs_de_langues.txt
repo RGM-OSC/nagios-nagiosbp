@@ -1,0 +1,31 @@
+﻿Comment installer les packs de langues
+--------------------------------------
+
+Nagios Business Process View et Nagios Business Process Analysis sont multi
+lingue (i18n).
+Dans la distribution, les seuls langues disponibles sont l'anglais et l'allemand.
+Mais peut-etre que quelqu'un d'autre a traduit l'IHM dans votre langue.
+(cf. available language packs)
+
+Assurez-vous que vous téléchargez la même version du pack de langage que l'addon.
+Sinon, il se peut qu'il apparaisse des chaines de caractères bizarre dans votre IHM.
+
+Si vous téléchargez et dézippez un pack de langage, vous trouverez 3 fichiers.
+
+optionnel: INSTALL.xx et README.xx
+Ce sont juste les traductions des fichiers INSTALL et README. Mettez les où vous voulez.
+
+obligatoire: i18n_xx.txt
+Copiez ce fichier dans le répertoire share/lang/ de votre répertoire d'installation,
+(emplacement par défaut /usr/local/nagiosbp/share/lang)
+
+Si vous configurez votre navigateur pour utiliser votre langue par défaut,
+l'addon utilisera votre language immédiatement. Sinon vous avez la possibilité de la changer
+en cliquant sur le lien correspondant à votre langue dans le coin de la page en bas à droite.
+
+Aucune traduction dans votre langue
+-----------------------------------
+
+Peut être que vous aurez l'occasion de traduire vous-même l'IHM ainsi que la documentation et
+de la partager avec les autres?
+Merci de me contacter: nagios.business.process@spb.be

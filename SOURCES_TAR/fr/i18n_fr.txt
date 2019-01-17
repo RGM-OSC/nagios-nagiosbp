@@ -1,0 +1,55 @@
+# language_file en for Nagios Business Process Add on
+# hint for translating in other languages:
+# where ever you find __var1__ __var2__ ... leave it unchanged while
+# translating; these are variables which are replaced at runtime
+
+priority_1_headline=Priorité 1
+priority_1_description=Processus métiers de priorité 1
+priority_2_headline=Priorité 2
+priority_2_description=Processus métiers de priorité 2
+priority_3_headline=Priorité 3
+priority_3_description=Processus métiers de priorité 3
+priority_4_headline=Priorité 4
+priority_4_description=Processus métiers de priorité 4
+priority_5_headline=Priorité 5
+priority_5_description=Processus métiers de priorité 5
+manually_set_to_ok=manuellement affecté ā ok
+manually_set_to_ok=manuellement affecté ā ok
+manually_set_to=manuellement affecté ā __var1__
+bi_head=Simulation sur les vues métiers
+bi_explanation=Avec la simulation ses les vues métiers, vous pourrez vous demander ce qui pourrait ce passer si ... <br> Vous avez la possibilité d'affecter sur chaque composant l'état que vous désirez lui attribué.<br>Aprčs cela, vous verrez les répercutions que cela induit sur votre vue métier.
+bi_start_session=Commencer une nouvelle session
+bi_select_starting_point=Sélectionner le point de départ:
+bi_actual_state=Statut actuel de l'ensemble des composants
+bi_all_set_to_ok=Tout les composants sont dans l'état OK
+bi_hint_session_timeout=Remarque:<br>Votre session expire aprčs 30 minutes
+bi_set_status=Sélectionner statut
+bi_set_host_status_to=Sélectionner le statut pour tous les services ā <b>__var1__</b> to:
+bi_set_service_status_to=Sélectionner le statut pour le service <b>__var1__</b> on <b>__var2__</b> to:
+short_summary_head=Court résumé
+prio=Priorité
+status=Statut
+details=Détails
+all_bp=Toutes les vues métiers
+show_trafficlight=Montrer la signalitique
+hide_trafficlight=Cacher la signalitique
+for=pour
+host=Hôte
+service=Service
+status=Statut
+status_information=Information sur le statut
+hint_and=L'application est disponible pour l'utilisateur, sinon c'est que le composant est en état critique.
+hint_or=Composants redondants. L'application est dispobible pour l'utilisateur si au moins un composant est dans l'état OK ou WARNING.
+hint_of=L'application est dispobible pour l'utilisateur, si au moins __var1__ composants sont dans les états OK ou WARNING.
+back_to_top=Retour au début
+bp_head=Vue des processus métiers
+business_process=Processus métiers
+tree_view=Vue arborescente
+info=Info
+language=Langage
+
+error_nagios_not_running=<h1>Erreur</h1><h2>Nagios n'est pas démarré sur la machine!</h2>
+error_wrong_parameter_conf_head=Paramčtre "conf" invalide.
+error_wrong_parameter_conf_body=Le paramčtre "conf" est probablement invalide.<br>__var1__ n'est pas un fichier régulier ou un fichier lisible.<br>
+error_not_existing_session_head=Session invalide
+error_not_existing_session_body=Cette session n'existe pas. Vous ne l'avez surement pas utilisé depuis longtemps.

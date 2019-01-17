@@ -1,0 +1,39 @@
+How to install language packs
+-----------------------------
+
+Nagios Business Process View and Nagios Business Process Analysis are multi
+lingual (i18n).
+In the default distribution the only two languages are english and german.
+But maybe someone else has translated the GUI to Your language.
+(see available language packs)
+
+Make sure You download a language pack in the same version as the AddOns.
+Otherwise there might be some strange strings appearing in Your GUI.
+
+If You downloaded and unzipped a language pack, You find up to 3 files.
+
+optional: INSTAL.xx and README.xx
+This is just a translation of INSTALL and README files. Put them where ever
+You like.
+
+mandatory: i18n_xx.txt
+Copy this file to the language directory:
+In version 0.9.0 and 0.9.1 this is the sbin directory of Your installation path
+(default location /usr/local/nagios-ext/sbin)
+In version 0.9.2 and above this is the directory share/lang 
+(default location /usr/local/nagiosbp/share/lang)
+That's it.
+Next time using the AddOns You have the new language available.
+
+If You did configure Your browser to use Your language as default language,
+the AddOns appear in Your language immediatelly. Otherwise You have to change
+to Your language by clicking the according link in the lower right corner of
+each page.
+
+
+No translation in Your language?
+--------------------------------
+
+Maybe You can translate the GUI and/or documentation to Your language and 
+share the translation with others?
+Please contact me: nagios.business.process@spb.de
