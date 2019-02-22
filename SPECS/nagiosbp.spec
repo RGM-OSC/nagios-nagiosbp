@@ -2,7 +2,7 @@
 
 Name: nagiosbp
 Version: 0.9.6
-Release: 3.eon
+Release: 3.rgm
 Summary: Nagios business process addon
 
 Group: Applications/System
@@ -10,20 +10,20 @@ License: GPL
 URL: http://nagiosbp.projects.nagiosforge.org/
 Source0: %{realname}-%{version}.tar.gz
 Source1: language_pack_fr_%{version}.tar.gz
-Source2: %{name}-eon.tar.gz
+Source2: %{name}-rgm.tar.gz
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-root
 
 Requires: nagios, mk-livestatus, perl > 5.8, perl-CGI-Simple
 
 # define path
-%define eondir		/srv/eyesofnetwork
+%define eondir		/srv/rgm
 %define eonconfdir	/srv/eyesofnetworkconf/%{name}
 %define datadir		%{eondir}/%{name}-%{version}
 %define linkdir		%{eondir}/%{name}
 
 # define user / group
 %define NAGIOSUSR	nagios
-%define APPLIANCEGRP	eyesofnetwork
+%define APPLIANCEGRP	rgm
 
 %description
 The AddOn Business Process View takes results of the single nagios checks out of NDO (Nagios' database) and builds up aggregated states.
@@ -74,12 +74,12 @@ install -d -m 0775 %{buildroot}%{datadir}/var/nagios_bp.sessions
 install -D -m 0644 fr/i18n_fr.txt %{buildroot}%{datadir}/share/lang/
 
 # eon specifics
-install -D -m 0664 %{name}-eon/nagios-bp.conf %{buildroot}%{datadir}/etc/
-install -D -m 0644 %{name}-eon/ndo.cfg %{buildroot}%{datadir}/etc/
-install -D -m 0644 %{name}-eon/settings.cfg %{buildroot}%{datadir}/etc/
-install -D -m 0644 %{name}-eon/nagios-bp.css %{buildroot}%{datadir}/share/stylesheets/
-install -D -m 0644 %{name}-eon/user.css %{buildroot}%{datadir}/share/stylesheets/
-install -D -m 0644 %{name}-eon/%{name}.conf %{buildroot}/%{_sysconfdir}/httpd/conf.d/%{name}.conf
+install -D -m 0664 %{name}-rgm/nagios-bp.conf %{buildroot}%{datadir}/etc/
+install -D -m 0644 %{name}-rgm/ndo.cfg %{buildroot}%{datadir}/etc/
+install -D -m 0644 %{name}-rgm/settings.cfg %{buildroot}%{datadir}/etc/
+install -D -m 0644 %{name}-rgm/nagios-bp.css %{buildroot}%{datadir}/share/stylesheets/
+install -D -m 0644 %{name}-rgm/user.css %{buildroot}%{datadir}/share/stylesheets/
+install -D -m 0644 %{name}-rgm/%{name}.conf %{buildroot}/%{_sysconfdir}/httpd/conf.d/%{name}.conf
 
 %post
 ln -nsf %{datadir} %{linkdir}
@@ -98,6 +98,9 @@ rm -rf %{buildroot}
 %config(noreplace) %{datadir}/etc/nagios-bp.conf
 
 %changelog
+* Fri Feb 22 2019 Michael Aubertin <maubertin@fr.scc.com> - 0.9.6-3.rgm
+- Initial fork
+
 * Thu Jun 20 2013 Jean-Philippe Levy <jeanphilippe.levy@gmail.com> - 0.9.6-3.eon
 - packaged for EyesOfNetwork appliance 4.0
 - set default language "en" instead of "de" fix
