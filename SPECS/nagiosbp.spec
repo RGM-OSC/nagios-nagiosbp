@@ -16,10 +16,10 @@ BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-root
 Requires: nagios, mk-livestatus, perl > 5.8, perl-CGI-Simple
 
 # define path
-%define eondir		/srv/rgm
-%define eonconfdir	/srv/eyesofnetworkconf/%{name}
-%define datadir		%{eondir}/%{name}-%{version}
-%define linkdir		%{eondir}/%{name}
+%define rgmdir		/srv/rgm
+%define rgmconfdir	/srv/eyesofnetworkconf/%{name}
+%define datadir		%{rgmdir}/%{name}-%{version}
+%define linkdir		%{rgmdir}/%{name}
 
 # define user / group
 %define NAGIOSUSR	nagios
@@ -31,7 +31,7 @@ The AddOn Business Process View takes results of the single nagios checks out of
 %prep
 %setup -T -b 0 -n %{realname}-%{version}
 %setup -T -b 1 -n fr
-%setup -T -b 2 -n %{name}-eon
+%setup -T -b 2 -n %{name}-rgm
 
 %build
 cd ../%{realname}-%{version}
@@ -41,7 +41,7 @@ CFLAGS="$RPM_OPT_FLAGS" CXXFLAGS="$RPM_OPT_FLAGS" \
  	--datadir=%{datadir}/share \
 	--with-nagiosbp-user=%{NAGIOSUSR} \
 	--with-nagiosbp-group=%{APPLIANCEGRP} \
-	--with-nagetc=%{eondir}/nagios/etc  \
+	--with-nagetc=%{rgmdir}/nagios/etc  \
 	--with-naghtmurl=/nagios \
 	--with-nagcgiurl=/thruk/cgi-bin \
 	--with-cron-d-dir=%{_sysconfdir}/cron.d \
@@ -73,7 +73,7 @@ install -d -m 0775 %{buildroot}%{datadir}/var/nagios_bp.sessions
 # language fr file
 install -D -m 0644 fr/i18n_fr.txt %{buildroot}%{datadir}/share/lang/
 
-# eon specifics
+# rgm specifics
 install -D -m 0664 %{name}-rgm/nagios-bp.conf %{buildroot}%{datadir}/etc/
 install -D -m 0644 %{name}-rgm/ndo.cfg %{buildroot}%{datadir}/etc/
 install -D -m 0644 %{name}-rgm/settings.cfg %{buildroot}%{datadir}/etc/
