@@ -99,7 +99,7 @@ rm -rf %{buildroot}
 
 %changelog
 * Fri Feb 22 2019 Michael Aubertin <maubertin@fr.scc.com> - 0.9.6-3.rgm
-- Initial fork
+- Initial fork 
 
 * Thu Jun 20 2013 Jean-Philippe Levy <jeanphilippe.levy@gmail.com> - 0.9.6-3.eon
 - packaged for EyesOfNetwork appliance 4.0
