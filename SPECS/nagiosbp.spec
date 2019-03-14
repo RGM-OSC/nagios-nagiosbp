@@ -2,7 +2,7 @@
 
 Name: nagiosbp
 Version: 0.9.6
-Release: 3.rgm
+Release: 4.rgm
 Summary: Nagios business process addon
 
 Group: Applications/System
@@ -13,17 +13,15 @@ Source1: language_pack_fr_%{version}.tar.gz
 Source2: %{name}-rgm.tar.gz
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-root
 
-Requires: nagios, mk-livestatus, perl > 5.8, perl-CGI-Simple
+Requires: rgm-base, nagios, mk-livestatus, perl > 5.8, perl-CGI-Simple
+BuildRequires: rpm-macros-rgm
 
 # define path
-%define rgmdir		/srv/rgm
-%define rgmconfdir	/srv/eyesofnetworkconf/%{name}
-%define datadir		%{rgmdir}/%{name}-%{version}
-%define linkdir		%{rgmdir}/%{name}
+%define datadir		%{rgm_path}/%{name}-%{version}
+%define linkdir		%{rgm_path}/%{name}
 
-# define user / group
-%define NAGIOSUSR	nagios
-%define APPLIANCEGRP	rgm
+%define rgmlibdir       %{_sharedstatedir}/rgm/%{name}
+
 
 %description
 The AddOn Business Process View takes results of the single nagios checks out of NDO (Nagios' database) and builds up aggregated states.
@@ -39,8 +37,8 @@ export PATH=$PATH:/usr/sbin
 CFLAGS="$RPM_OPT_FLAGS" CXXFLAGS="$RPM_OPT_FLAGS" \
 ./configure \
  	--datadir=%{datadir}/share \
-	--with-nagiosbp-user=%{NAGIOSUSR} \
-	--with-nagiosbp-group=%{APPLIANCEGRP} \
+	--with-nagiosbp-user=%{rgm_user_nagios} \
+	--with-nagiosbp-group=%{rgm_group} \
 	--with-nagetc=%{rgmdir}/nagios/etc  \
 	--with-naghtmurl=/nagios \
 	--with-nagcgiurl=/thruk/cgi-bin \
@@ -77,14 +75,31 @@ install -D -m 0644 fr/i18n_fr.txt %{buildroot}%{datadir}/share/lang/
 install -D -m 0664 %{name}-rgm/nagios-bp.conf %{buildroot}%{datadir}/etc/
 install -D -m 0644 %{name}-rgm/ndo.cfg %{buildroot}%{datadir}/etc/
 install -D -m 0644 %{name}-rgm/settings.cfg %{buildroot}%{datadir}/etc/
+install -D -m 0644 %{name}-rgm/schema_nagiosbp.sql %{buildroot}%{datadir}/etc/
 install -D -m 0644 %{name}-rgm/nagios-bp.css %{buildroot}%{datadir}/share/stylesheets/
 install -D -m 0644 %{name}-rgm/user.css %{buildroot}%{datadir}/share/stylesheets/
 install -D -m 0644 %{name}-rgm/%{name}.conf %{buildroot}/%{_sysconfdir}/httpd/conf.d/%{name}.conf
 
+# patch apache conf file with macro values
+sed -i 's|AuthrgmMySQLUsername rgminternal|AuthrgmMySQLUsername %{rgm_sql_internal_user}|' %{buildroot}%{_sysconfdir}/httpd/conf.d/%{name}.conf
+sed -i 's|AuthrgmMySQLPassword 0rd0-c0m1735-b47h0n143|AuthrgmMySQLPassword %{rgm_sql_internal_pwd}|' %{buildroot}%{_sysconfdir}/httpd/conf.d/%{name}.conf
+sed -i 's|AuthrgmMySQLDB rgmweb|AuthrgmMySQLDB %{rgm_db_rgmweb}|' %{buildroot}%{_sysconfdir}/httpd/conf.d/%{name}.conf
+# patch RGM path on settings.cfg
+sed -i 's|/srv/rgm/|%{rgm_path}/|' %{buildroot}%{datadir}/etc/settings.cfg
+# patch ndo.cfg
+sed -i 's|/srv/rgm/|%{rgm_path}/|' %{buildroot}%{datadir}/etc/ndo.cfg
+sed -i 's|rgminternal|%{rgm_sql_internal_user}|' %{buildroot}%{datadir}/etc/ndo.cfg
+sed -i 's|0rd0-c0m1735-b47h0n143|%{rgm_sql_internal_pwd}|' %{buildroot}%{datadir}/etc/ndo.cfg
+
+
 %post
 ln -nsf %{datadir} %{linkdir}
-chown -h %{NAGIOSUSR}:%{APPLIANCEGRP} %{linkdir}
-chmod -R g+w %{datadir}/var/nagios_bp.sessions
+chown -h %{rgm_user_nagios}:%{rgm_group} %{linkdir}
+#chmod -R g+w %{datadir}/var/nagios_bp.sessions
+
+# execute SQL postinstall script
+/usr/share/rgm/manage_sql.sh "%{rgm_db_nagiosbp}" "%{datadir}/etc/schema_nagiosbp.sql" "%{rgm_sql_internal_user}" "%{rgm_sql_internal_pwd}"
+
 
 %clean
 rm -rf %{buildroot}
@@ -93,11 +108,22 @@ rm -rf %{buildroot}
 %defattr(-, root, root, 0755)
 %{_sysconfdir}/cron.d/nagiosbp
 %{_sysconfdir}/httpd/conf.d/nagiosbp.conf
-%defattr(-, %{NAGIOSUSR}, %{APPLIANCEGRP}, 0755)
+
+%defattr(-, %{rgm_user_nagios}, %{rgm_group}, 0755)
 %{datadir}
 %config(noreplace) %{datadir}/etc/nagios-bp.conf
 
+%defattr(0664, %{rgm_user_nagios}, %{rgm_group}, 0775)
+%{datadir}/var/nagios_bp.sessions
+
+
 %changelog
+* Thu Mar 14 2019 Eric Belhomme <ebelhomme@fr.scc.com> - 0.9.6-4.rgm
+- add rpm-macros-rgm as build dependency
+- add rgm-base as dependency
+- add SQL schema creation script
+- fix RGM paths and SQL creds on config files 
+
 * Fri Feb 22 2019 Michael Aubertin <maubertin@fr.scc.com> - 0.9.6-3.rgm
 - Initial fork 
 
