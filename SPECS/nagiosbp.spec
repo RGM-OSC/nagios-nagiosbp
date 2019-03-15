@@ -98,7 +98,7 @@ chown -h %{rgm_user_nagios}:%{rgm_group} %{linkdir}
 #chmod -R g+w %{datadir}/var/nagios_bp.sessions
 
 # execute SQL postinstall script
-/usr/share/rgm/manage_sql.sh "%{rgm_db_nagiosbp}" "%{datadir}/etc/schema_nagiosbp.sql" "%{rgm_sql_internal_user}" "%{rgm_sql_internal_pwd}"
+/usr/share/rgm/manage_sql.sh -d %{rgm_db_nagiosbp} -s %{datadir}/etc/schema_nagiosbp.sql -u %{rgm_sql_internal_user} -p %{rgm_sql_internal_pwd}
 
 
 %clean
