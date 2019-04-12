@@ -2,7 +2,7 @@
 
 Name: nagiosbp
 Version: 0.9.6
-Release: 4.rgm
+Release: 5.rgm
 Summary: Nagios business process addon
 
 Group: Applications/System
@@ -13,7 +13,7 @@ Source1: language_pack_fr_%{version}.tar.gz
 Source2: %{name}-rgm.tar.gz
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-root
 
-Requires: rgm-base, nagios, mk-livestatus, perl > 5.8, perl-CGI-Simple
+Requires: rgm-base, nagios, mk-livestatus, perl > 5.8, perl-CGI-Simple, perl-libwww-perl
 BuildRequires: rpm-macros-rgm
 
 # define path
@@ -118,6 +118,9 @@ rm -rf %{buildroot}
 
 
 %changelog
+* Fri Apr 12 2019 Michael Aubertin <maubertin@fr.scc.com> - 0.9.6-5.rgm
+- Fix themes and dep 
+
 * Thu Mar 14 2019 Eric Belhomme <ebelhomme@fr.scc.com> - 0.9.6-4.rgm
 - add rpm-macros-rgm as build dependency
 - add rgm-base as dependency
