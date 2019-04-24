@@ -1,39 +1,85 @@
+@font-face {
+    font-family: 'Fira Sans';
+    src: url('/fonts/FiraSans-Regular.woff');
+}
+
+.h1, h1 {
+    font-size: 36px;
+    color: #a7a9ac;
+    font-family: "Fira Sans",Helvetica,Arial,sans-serif;
+}
+
+BODY {
+        border:0;
+        margin:0;
+        padding:0;
+        margin-left:15px;
+        margin-top:5px;
+        margin-right:10px;
+}
+
+.statusTitle
+{
+        color: black;
+        padding-top: 10px;
+        padding-bottom: 2px;
+        padding-left: 10px;
+        margin-bottom: 10px;
+        font-weight:bold;
+        border-bottom: 1px solid #AAAAAA;
+        text-transform:uppercase;
+        background-color: white;
+        font-family: "Fira Sans",Helvetica,Arial,sans-serif;
+}
+
+TABLE.status
+{
+        width: 100%;
+}
+
+.statusOdd   { font-size: 10pt; background-color: #e7e7e7; line-height: 150%; padding: 0 4px 0 4px; font-family: "Fira Sans",Helvetica,Arial,sans-serif;}
+.statusEven  { font-size: 10pt; background-color: #f8f8f8; line-height: 150%; padding: 0 4px 0 4px; font-family: "Fira Sans",Helvetica,Arial,sans-serif;}
+th.status    { font-size: 12pt; font-weight: normal; text-align: center;  padding: 20px 3px 0 3px;  border: 1px #fdfdfd00 outset;   color: #333333; font-family: "Fira Sans",Helvetica,Arial,sans-serif;}
+
 A.status { 
-	background-color: #999797; 
-	color: #DCE5C1; 
-	font-size: 10pt; 
+	background-color: #eee; 
+	color: black; 
+	font-size: 12pt; 
 	text-align: left; 
+	font-family: "Fira Sans",Helvetica,Arial,sans-serif;
 }
 
 .nbp_text_small { 
-	font-size:80%; 
+	font-size:100%; 
+	font-family: "Fira Sans",Helvetica,Arial,sans-serif;
 }
 
 .nbp_text_tiny { 
-	font-size:60%; 
-}
-
-.nbp_central_table_spacer { 
-	height:3em; 
+	font-size:100%; 
+	font-family: "Fira Sans",Helvetica,Arial,sans-serif;
 }
 
 .nbp_sub_head { 
 	border-top:1.5em solid transparent; 
 	font-size:100%; 
 	font-weight:bold; 
+	font-family: "Fira Sans",Helvetica,Arial,sans-serif;
 }
 
 .nbp_description { 
 	font-size:120%; 
 	text-align:center; 
+	font-family: "Fira Sans",Helvetica,Arial,sans-serif;
 }
 
 .nbp_nobr { 
 	white-space:nowrap; 
+	font-family: "Fira Sans",Helvetica,Arial,sans-serif;
 }
 
 .nbp_no_border {
 	border:0;
+	font-family: "Fira Sans",Helvetica,Arial,sans-serif;
 }
 
 #nbp_central_table, 
@@ -42,7 +88,8 @@ A.status {
 #nbp_trafficlight_only_table, 
 #nbp_wu_service_table, 
 #nbp_wu_host_table { 
-	margin:auto; 
+	margin:auto;
+	width:auto;
 }
 
 #nbp_trafficlight_short_table { 
@@ -55,10 +102,8 @@ A.status {
 }
 
 #nbp_trafficlight_yes_box { 
-	float:left; 
-	margin:0; 
-	padding:0; 
-	width:8em; 
+	position: absolute;
+	margin-top: 45px; 
 }
 
 #nbp_body_short { 
@@ -67,12 +112,8 @@ A.status {
 
 #nbp_body_bi,  
 #nbp_body_bi table,  
-#nbp_body_bi td.status { 
-	background-color:#FFFFCC; 
-}
-
 #nbp_error_text { 
-	text-align:center; 
+	text-align:left; 
 }
 
 #nbp_startingpoint_form_bi, 
@@ -82,7 +123,6 @@ A.status {
 
 #nbp_cental_table_box_tl_yes { 
 	margin:0; 
-	margin-left:9em; 
 	padding:0; 
 }
 
@@ -94,7 +134,7 @@ A.status {
 
 #nbp_table_tree, 
 #nbp_table_list { 
-	margin:auto; 
+	margin:0; 
 	margin-top:3em; 
 }
 
@@ -116,12 +156,14 @@ A.status {
 
 #nbp_foot_version { 
 	float:left; 
-	font-size:75%; 
+	font-size:100%; 
+	font-family: "Fira Sans",Helvetica,Arial,sans-serif;
 }
 
 #nbp_foot_language { 
 	float:right; 
-	font-size:75%; 
+	font-size:100%; 
+	font-family: "Fira Sans",Helvetica,Arial,sans-serif;
 }
 
 #nbp_head_bi, 

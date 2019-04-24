@@ -397,7 +397,7 @@
 					{
 						# main tree view area
 						print "		<div id=\"nbp_cental_table_box_tl_${trafficlight}\">\n";
-						print "		<div class=\'statusTitle\' id=\'nbp_head_${mode}\'>";
+						print "		<div id=\'nbp_head_${mode}\'><h1>";
 						if ($mode eq "act") 
 						{ 
 							print &get_lang_string("short_summary_head") . ": " .  &get_lang_string("all_bp") 
@@ -410,7 +410,7 @@
 						{
 							print " - " . &get_lang_string("priority_" . $display_prio . "_headline");
 						}
-						print "</div>\n";
+						print "</h1></div>\n";
 						print " 	<div id=\'nbp_central_element\'>\n";
 						print " 		<table id=\'nbp_central_table\' class=\'status\'>\n";
 
@@ -1048,10 +1048,6 @@ sub printPageFoot()
 		{
 			$languages = &getAvaiableLanguages();
 			print "			<div id=\"nbp_foot\">\n";
-			print "				<div id=\'nbp_foot_version\'>\n";
-			print "					" . &get_lang_string("last_updated") . ": $timestamp<br>\n";
-			print "					Nagios Business Process AddOn, " . &get_lang_string("version") . " " . &getVersion . "\n";
-			print "				</div>\n";
 			print "				<div id=\'nbp_foot_language\'>\n";
 			print "				" . &get_lang_string("language") . ":\n";
 			foreach $i (@$languages)
