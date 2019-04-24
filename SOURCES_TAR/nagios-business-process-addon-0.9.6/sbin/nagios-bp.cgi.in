@@ -623,10 +623,10 @@
 	
 					&printPageHead("html");
 					print "		<div id=\"nbp_single_table_box\">\n";
-					print "		<div class=\'statusTitle\'>";
+					print "		<div class=\'statusTitle\'><h1>";
 					if ($mode eq "act") { print &get_lang_string("status") . ": " .  &get_lang_string("details") }
 					elsif ($mode eq "bi") { print &get_lang_string("bi_head") . ": " .  &get_lang_string("details") }
-					print " " .  &get_lang_string("for") . " " . $display->{$tree} . "</div>\n";
+					print " " .  &get_lang_string("for") . " " . $display->{$tree} . "</h1></div>\n";
 					print " 		<table id=\'nbp_table_tree\' class=\'status\'>\n";
 					print " 			<tr>\n";
 					print " 				<th> </th>\n";
@@ -821,10 +821,10 @@
 
 				&printPageHead("html");
 				print "		<div id=\"nbp_single_table_box\">\n";
-				print "		<div class=\'statusTitle\'>";
+				print "		<div class=\'statusTitle\'><h1>";
 				if ($mode eq "act") { print &get_lang_string("status") . ": " .  &get_lang_string("details") }
 				elsif ($mode eq "bi") { print &get_lang_string("bi_head") . ": " .  &get_lang_string("details") }
-				print " " .  &get_lang_string("for") . " " . $display->{$detail} . "</div>\n";
+				print " " .  &get_lang_string("for") . " " . $display->{$detail} . "</h1></div>\n";
 				print " 		<table id=\'nbp_table_list\' class=\'status\'>\n";
 				print " 			<tr>\n";
 				print " 				<th class=\'status\'>" .  &get_lang_string("host") . "</th>\n";

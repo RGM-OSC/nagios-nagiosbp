@@ -16,6 +16,7 @@ BODY {
         margin-left:15px;
         margin-top:5px;
         margin-right:10px;
+        font-family: "Fira Sans",Helvetica,Arial,sans-serif;
 }
 
 .statusTitle
@@ -29,7 +30,7 @@ BODY {
         border-bottom: 1px solid #AAAAAA;
         text-transform:uppercase;
         background-color: white;
-        font-family: "Fira Sans",Helvetica,Arial,sans-serif;
+        font-family: "Fira Sans",arial,serif;
 }
 
 TABLE.status
@@ -37,49 +38,42 @@ TABLE.status
         width: 100%;
 }
 
-.statusOdd   { font-size: 10pt; background-color: #e7e7e7; line-height: 150%; padding: 0 4px 0 4px; font-family: "Fira Sans",Helvetica,Arial,sans-serif;}
-.statusEven  { font-size: 10pt; background-color: #f8f8f8; line-height: 150%; padding: 0 4px 0 4px; font-family: "Fira Sans",Helvetica,Arial,sans-serif;}
-th.status    { font-size: 12pt; font-weight: normal; text-align: center;  padding: 20px 3px 0 3px;  border: 1px #fdfdfd00 outset;   color: #333333; font-family: "Fira Sans",Helvetica,Arial,sans-serif;}
-
 A.status { 
 	background-color: #eee; 
 	color: black; 
-	font-size: 12pt; 
-	text-align: left; 
-	font-family: "Fira Sans",Helvetica,Arial,sans-serif;
+	font-size: 10pt; 
+	text-align: left;
+	font-family: "Fira Sans",arial,serif;
 }
 
 .nbp_text_small { 
 	font-size:100%; 
-	font-family: "Fira Sans",Helvetica,Arial,sans-serif;
 }
 
 .nbp_text_tiny { 
 	font-size:100%; 
-	font-family: "Fira Sans",Helvetica,Arial,sans-serif;
 }
 
 .nbp_sub_head { 
 	border-top:1.5em solid transparent; 
 	font-size:100%; 
-	font-weight:bold; 
-	font-family: "Fira Sans",Helvetica,Arial,sans-serif;
+	font-weight:bold;
+	font-family: "Fira Sans",arial,serif;
 }
 
 .nbp_description { 
 	font-size:120%; 
 	text-align:center; 
-	font-family: "Fira Sans",Helvetica,Arial,sans-serif;
+	font-family: "Fira Sans",arial,serif;
 }
 
 .nbp_nobr { 
 	white-space:nowrap; 
-	font-family: "Fira Sans",Helvetica,Arial,sans-serif;
+	font-family: "Fira Sans",arial,serif;
 }
 
 .nbp_no_border {
 	border:0;
-	font-family: "Fira Sans",Helvetica,Arial,sans-serif;
 }
 
 #nbp_central_table, 
@@ -157,13 +151,11 @@ A.status {
 #nbp_foot_version { 
 	float:left; 
 	font-size:100%; 
-	font-family: "Fira Sans",Helvetica,Arial,sans-serif;
 }
 
 #nbp_foot_language { 
 	float:right; 
 	font-size:100%; 
-	font-family: "Fira Sans",Helvetica,Arial,sans-serif;
 }
 
 #nbp_head_bi, 
