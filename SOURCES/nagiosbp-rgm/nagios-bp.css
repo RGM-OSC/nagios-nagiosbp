@@ -1,3 +1,14 @@
+@font-face {
+    font-family: 'Fira Sans';
+    src: url('/fonts/FiraSans-Regular.woff');
+}
+
+.h1, h1 {
+    font-size: 36px;
+    color: #a7a9ac;
+    font-family: "Fira Sans",Helvetica,Arial,sans-serif;
+}
+
 BODY {
         border:0;
         margin:0;
@@ -5,6 +16,7 @@ BODY {
         margin-left:15px;
         margin-top:5px;
         margin-right:10px;
+        font-family: "Fira Sans",Helvetica,Arial,sans-serif;
 }
 
 .statusTitle
@@ -18,6 +30,7 @@ BODY {
         border-bottom: 1px solid #AAAAAA;
         text-transform:uppercase;
         background-color: white;
+        font-family: "Fira Sans",arial,serif;
 }
 
 TABLE.status
@@ -29,7 +42,8 @@ A.status {
 	background-color: #eee; 
 	color: black; 
 	font-size: 10pt; 
-	text-align: left; 
+	text-align: left;
+	font-family: "Fira Sans",arial,serif;
 }
 
 .nbp_text_small { 
@@ -43,16 +57,19 @@ A.status {
 .nbp_sub_head { 
 	border-top:1.5em solid transparent; 
 	font-size:100%; 
-	font-weight:bold; 
+	font-weight:bold;
+	font-family: "Fira Sans",arial,serif;
 }
 
 .nbp_description { 
 	font-size:120%; 
 	text-align:center; 
+	font-family: "Fira Sans",arial,serif;
 }
 
 .nbp_nobr { 
 	white-space:nowrap; 
+	font-family: "Fira Sans",arial,serif;
 }
 
 .nbp_no_border {
