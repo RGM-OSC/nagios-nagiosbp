@@ -2,7 +2,7 @@
 
 Name: nagiosbp
 Version: 0.9.6
-Release: 6.rgm
+Release: 7.rgm
 Summary: Nagios business process addon
 
 Group: Applications/System
@@ -118,6 +118,9 @@ rm -rf %{buildroot}
 
 
 %changelog
+* Fri Apr 24 2019 Michael Aubertin <maubertin@fr.scc.com> - 0.9.6-7.rgm
+- Harmonize theme 
+
 * Fri Apr 24 2019 Michael Aubertin <maubertin@fr.scc.com> - 0.9.6-6.rgm
 - Harmonize theme 
 
