@@ -2,7 +2,7 @@
 
 Name: nagiosbp
 Version: 0.9.6
-Release: 7.rgm
+Release: 8.rgm
 Summary: Nagios business process addon
 
 Group: Applications/System
@@ -16,12 +16,12 @@ BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-root
 Requires: rgm-base, nagios, mk-livestatus, perl > 5.8, perl-CGI-Simple, perl-libwww-perl
 BuildRequires: rpm-macros-rgm
 
+
 # define path
 %define datadir		%{rgm_path}/%{name}-%{version}
 %define linkdir		%{rgm_path}/%{name}
 
 %define rgmlibdir       %{_sharedstatedir}/rgm/%{name}
-
 
 %description
 The AddOn Business Process View takes results of the single nagios checks out of NDO (Nagios' database) and builds up aggregated states.
@@ -91,6 +91,8 @@ sed -i 's|/srv/rgm/|%{rgm_path}/|' %{buildroot}%{datadir}/etc/ndo.cfg
 sed -i 's|rgminternal|%{rgm_sql_internal_user}|' %{buildroot}%{datadir}/etc/ndo.cfg
 sed -i 's|0rd0-c0m1735-b47h0n143|%{rgm_sql_internal_pwd}|' %{buildroot}%{datadir}/etc/ndo.cfg
 
+# Add initial schema
+cp %{SOURCE3} %{buildroot}%{rgmlibdir}/sql/
 
 %post
 ln -nsf %{datadir} %{linkdir}
@@ -118,6 +120,9 @@ rm -rf %{buildroot}
 
 
 %changelog
+* Fri Apr 24 2019 Michael Aubertin <maubertin@fr.scc.com> - 0.9.6-8.rgm
+- Harmonize theme 
+
 * Fri Apr 24 2019 Michael Aubertin <maubertin@fr.scc.com> - 0.9.6-7.rgm
 - Harmonize theme 
 
