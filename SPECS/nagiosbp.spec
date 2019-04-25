@@ -91,8 +91,6 @@ sed -i 's|/srv/rgm/|%{rgm_path}/|' %{buildroot}%{datadir}/etc/ndo.cfg
 sed -i 's|rgminternal|%{rgm_sql_internal_user}|' %{buildroot}%{datadir}/etc/ndo.cfg
 sed -i 's|0rd0-c0m1735-b47h0n143|%{rgm_sql_internal_pwd}|' %{buildroot}%{datadir}/etc/ndo.cfg
 
-# Add initial schema
-cp %{SOURCE3} %{buildroot}%{rgmlibdir}/sql/
 
 %post
 ln -nsf %{datadir} %{linkdir}
