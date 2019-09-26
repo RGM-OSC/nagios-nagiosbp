@@ -92,7 +92,7 @@ CREATE TABLE `bp_services` (
 
 LOCK TABLES `bp_services` WRITE;
 /*!40000 ALTER TABLE `bp_services` DISABLE KEYS */;
-INSERT INTO `bp_services` VALUES (1,'rgm_server','localhost.localdomain','Hoststatus'),(2,'rgm_server','localhost.localdomain','memory'),(3,'rgm_server','localhost.localdomain','ged_status'),(4,'rgm_server','localhost.localdomain','processor'),(5,'rgm_server','localhost.localdomain','mysql_status'),(6,'rgm_server','localhost.localdomain','http_status');
+INSERT INTO `bp_services` VALUES (1,'rgm_server','localhost.localdomain','Hoststatus'),(2,'rgm_server','localhost.localdomain','memory'),(3,'rgm_server','localhost.localdomain','ged_status'),(4,'rgm_server','localhost.localdomain','processor'),(5,'rgm_server','localhost.localdomain','mysql_status'),(6,'rgm_server','localhost.localdomain','httpd_status');
 /*!40000 ALTER TABLE `bp_services` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;

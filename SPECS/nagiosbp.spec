@@ -2,7 +2,7 @@
 
 Name: nagiosbp
 Version: 0.9.6
-Release: 9.rgm
+Release: 10.rgm
 Summary: Nagios business process addon
 
 Group: Applications/System
@@ -118,6 +118,9 @@ rm -rf %{buildroot}
 
 
 %changelog
+* Thu Sep 26 2019 Michael Aubertin <maubertin@fr.scc.com> - 0.9.6-10.rgm
+- Fix initial BP
+
 * Thu Sep 26 2019 Michael Aubertin <maubertin@fr.scc.com> - 0.9.6-9.rgm
 - Initial RGM BP 
 
