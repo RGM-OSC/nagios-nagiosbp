@@ -69,7 +69,7 @@ install -D -m 0644 %{realname}-%{version}/share/stylesheets/nagios-bp.css %{buil
 install -d -m 0775 %{buildroot}%{datadir}/var/nagios_bp.sessions
 
 # language fr file
-install -D -m 0644 fr/i18n_fr.txt %{buildroot}%{datadir}/share/lang/
+install -D -m 0644 language_pack_fr_%{version}/i18n_fr.txt %{buildroot}%{datadir}/share/lang/
 
 # rgm specifics
 install -D -m 0664 %{name}-rgm/nagios-bp.conf %{buildroot}%{datadir}/etc/
