@@ -28,7 +28,7 @@ The AddOn Business Process View takes results of the single nagios checks out of
 
 %prep
 %setup -T -b 0 -n %{realname}-%{version}
-%setup -T -b 1 -n fr
+%setup -T -b 1 -n language_pack_fr_%{version}
 %setup -T -b 2 -n %{name}-rgm
 
 %build
@@ -124,13 +124,13 @@ rm -rf %{buildroot}
 * Thu Sep 26 2019 Michael Aubertin <maubertin@fr.scc.com> - 0.9.6-9.rgm
 - Initial RGM BP 
 
-* Fri Apr 24 2019 Michael Aubertin <maubertin@fr.scc.com> - 0.9.6-8.rgm
+* Wed Apr 24 2019 Michael Aubertin <maubertin@fr.scc.com> - 0.9.6-8.rgm
 - Harmonize theme 
 
-* Fri Apr 24 2019 Michael Aubertin <maubertin@fr.scc.com> - 0.9.6-7.rgm
+* Wed Apr 24 2019 Michael Aubertin <maubertin@fr.scc.com> - 0.9.6-7.rgm
 - Harmonize theme 
 
-* Fri Apr 24 2019 Michael Aubertin <maubertin@fr.scc.com> - 0.9.6-6.rgm
+* Wed Apr 24 2019 Michael Aubertin <maubertin@fr.scc.com> - 0.9.6-6.rgm
 - Harmonize theme 
 
 * Fri Apr 12 2019 Michael Aubertin <maubertin@fr.scc.com> - 0.9.6-5.rgm
@@ -170,5 +170,5 @@ rm -rf %{buildroot}
 * Wed Jul 10 2009 Jean-Philippe Levy <jeanphilippe.levy@gmail.com> - 0.9.3-0.eon
 - packaged for EyesOfNetwork appliance 2.0
 
-* Thu Nov 18 2008 Jean-Philippe Levy <jeanphilippe.levy@gmail.com> - 0.9.2-0.eon
+* Tue Nov 18 2008 Jean-Philippe Levy <jeanphilippe.levy@gmail.com> - 0.9.2-0.eon
 - packaged for EyesOfNetwork appliance
